@@ -103,11 +103,19 @@ new Vue({
             break;
         }
       } else {
-        rain.pause();
-        relax.pause();
-        interstellar.pause();
+        this.songSound();
       }
+    },
+    songSound: function() {
+      rain.pause();
+      relax.pause();
+      interstellar.pause();
     }
-  }
-
+  },
+  watch: {
+    ambientPlay() {
+      this.songSound();
+      this.ambientSong(true);
+    }
+  },
 });
