@@ -103,10 +103,10 @@ new Vue({
             break;
         }
       } else {
-        this.songSound();
+        this.stopSound();
       }
     },
-    songSound: function() {
+    stopSound: function() {
       rain.pause();
       relax.pause();
       interstellar.pause();
@@ -114,7 +114,7 @@ new Vue({
   },
   watch: {
     ambientPlay() {
-      this.songSound();
+      this.stopSound();
       this.ambientSong(true);
     }
   },
